@@ -1,0 +1,67 @@
+/* Reset and body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('static/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+/* Center container for all pages */
+.center-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0,0,0,0.6);
+    padding: 40px 60px;
+    border-radius: 15px;
+}
+
+/* Headings */
+h1, h2, h3 {
+    margin-bottom: 30px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Inputs and selects */
+select, input[type="date"] {
+    padding: 12px;
+    margin: 10px 0;
+    width: 250px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Buttons */
+button {
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: gold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffbf00;
+}
+
+/* Graph image */
+img {
+    margin-top: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    max-width: 100%;
+}

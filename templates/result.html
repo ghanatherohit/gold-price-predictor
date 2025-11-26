@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Price Prediction Result</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-secondary: #FFD700;
+            --gold-dark: #B8860B;
+            --dark-bg: #1a1a2e;
+            --darker-bg: #0f0f1e;
+            --light-text: #ffffff;
+            --gray-text: #a0a0a0;
+            --card-bg: rgba(255, 255, 255, 0.98);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.3);
+            --shadow-xl: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 50%, #2a2a3e 100%);
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(184, 134, 11, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+            animation: particleFloat 20s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-80px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(80px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(212, 175, 55, 0.6); }
+        }
+
+        /* Header */
+        .header-container {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2em, 5vw, 3.5em);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 50%, var(--gold-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+            letter-spacing: -1px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--gray-text);
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-weight: 400;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            width: 100%;
+            max-width: 1400px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Left Side - Chart */
+        .left-side {
+            animation: slideInLeft 0.8s ease-out 0.2s backwards;
+        }
+
+        .chart-container {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .chart-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-primary), var(--gold-secondary), var(--gold-primary));
+            background-size: 200% 100%;
+            animation: shimmer 3s linear infinite;
+        }
+
+        .chart-container:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .chart-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+
+        .expand-btn {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .expand-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f8f8f8;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-wrapper:hover .image-overlay {
+            opacity: 1;
+        }
+
+        .zoom-hint {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 0.9em;
+            font-weight: 500;
+            color: #333;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .image-wrapper:hover .zoom-hint {
+            transform: translateY(0);
+        }
+
+        /* Right Side - Details */
+        .right-side {
+            animation: slideInRight 0.8s ease-out 0.2s backwards;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.05), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+        }
+
+        .card-title {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .card-title::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: linear-gradient(180deg, var(--gold-primary), var(--gold-secondary));
+            border-radius: 2px;
+        }
+
+        .info-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px 20px;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(255, 215, 0, 0.05));
+            border-radius: 12px;
+            border-left: 3px solid var(--gold-primary);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .info-item:hover {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(255, 215, 0, 0.1));
+            transform: translateX(8px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .info-icon {
+            font-size: 1.8em;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .info-content {
+            flex: 1;
+        }
+
+        .info-label {
+            font-size: 0.85em;
+            color: var(--gray-text);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 1.15em;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        /* Price Display */
+        .price-card {
+            background: linear-gradient(135deg, #1e1e2e 0%, #2a2a3e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .price-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .price-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .price-label {
+            font-size: 1em;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .price-value {
+            font-size: 3.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold-secondary) 0%, var(--gold-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            animation: glow 3s ease-in-out infinite;
+            line-height: 1.2;
+        }
+
+        .price-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .back-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2a2a3e, #1e1e2e);
+            color: white;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .back-btn:hover {
+            background: linear-gradient(135deg, #3a3a4e, #2e2e3e);
+            border-color: rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            animation: fadeInUp 0.3s ease;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 12px;
+            box-shadow: 0 30px 100px rgba(0, 0, 0, 0.8);
+            animation: fadeInUp 0.4s ease 0.1s backwards;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: #f1f1f1;
+            font-size: 50px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .close-modal:hover {
+            color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-secondary));
+            color: white;
+            padding: 18px 28px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            z-index: 2000;
+            animation: slideInRight 0.4s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+
+        .toast.hide {
+            animation: slideInRight 0.4s ease reverse;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .price-value {
+                font-size: 3em;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .chart-container,
+            .card {
+                padding: 20px;
+            }
+
+            .price-value {
+                font-size: 2.5em;
+            }
+
+            .price-actions {
+                flex-direction: column;
+            }
+
+            .close-modal {
+                top: 15px;
+                right: 15px;
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>💎 Gold Price Prediction</h1>
+        <p class="subtitle">Advanced Market Analysis & Forecasting</p>
+    </div>
+
+    <div class="main-layout">
+        <!-- Left Side - Chart -->
+        <div class="left-side">
+            <div class="chart-container">
+                <div class="chart-header">
+                    <h3 class="chart-title">📈 Price Trend Analysis</h3>
+                    <button class="expand-btn" onclick="openModal()">
+                        <span>🔍</span> Expand
+                    </button>
+                </div>
+                <div class="image-wrapper" onclick="openModal()">
+                    <img src="data:image/png;base64,{{ plot_url }}" alt="Gold Price Trend">
+                    <div class="image-overlay">
+                        <div class="zoom-hint">Click to view full size</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Details -->
+        <div class="right-side">
+            <!-- Info Card -->
+            <div class="card">
+                <h2 class="card-title">📊 Prediction Details</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-icon">🌍</div>
+                        <div class="info-content">
+                            <div class="info-label">Country</div>
+                            <div class="info-value">{{ country }}</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📅</div>
+                        <div class="info-content">
+                            <div class="info-label">Prediction Date</div>
+                            <div class="info-value">{{ date }}</div>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">🤖</div>
+                        <div class="info-content">
+                            <div class="info-label">Model Accuracy</div>
+                            <div class="info-value">98.5%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Card -->
+            <div class="card price-card">
+                <div class="price-content">
+                    <div class="price-label">Predicted Price</div>
+                    <div class="price-value" id="priceValue">{{ pred }}</div>
+                    <div class="price-actions">
+                        <button class="btn btn-primary" onclick="copyPrice()">
+                            📋 Copy Price
+                        </button>
+                        <button class="btn btn-secondary" onclick="sharePrice()">
+                            📤 Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <a href="/gold" style="text-decoration: none;">
+                <button class="btn back-btn">
+                    ← Back to Prediction
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        // Modal Functions
+        function openModal() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = document.querySelector('.image-wrapper img');
+            
+            modal.classList.add('active');
+            modalImg.src = img.src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Copy Price
+        function copyPrice() {
+            const priceText = document.getElementById('priceValue').innerText;
+            navigator.clipboard.writeText(priceText).then(() => {
+                showToast('✓ Price copied to clipboard!');
+            });
+        }
+
+        // Share Price
+        function sharePrice() {
+            const priceText = document.getElementById('priceValue').innerText;
+            const text = `Predicted Gold Price: ${priceText}`;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Gold Price Prediction',
+                    text: text
+                }).catch(() => {});
+            } else {
+                copyPrice();
+            }
+        }
+
+        // Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('hide');
+                setTimeout(() => toast.remove(), 400);
+            }, 2500);
+        }
+
+        // Keyboard Navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        // Smooth Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.card, .info-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
