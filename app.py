@@ -56,7 +56,7 @@ def gold():
             pred = models[country].predict(X_predict)[0]
 
             # Historical 12-month graph
-            months = pd.date_range(end=dt, periods=12, freq='M')
+            months = pd.date_range(end=dt, periods=12, freq='ME')
             X_hist = pd.DataFrame([[m.month,m.year] for m in months], columns=['month','year'])
             y_hist = models[country].predict(X_hist)
 
