@@ -1,0 +1,116 @@
+2026-02-26 00:33:24,493 | INFO | app | All models load attempt completed.
+2026-02-26 00:33:24,511 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 00:33:24,520 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 00:35:36,347 | INFO | app | All models load attempt completed.
+2026-02-26 00:35:36,404 | INFO | waitress | Serving on http://0.0.0.0:8000
+2026-02-26 00:52:41,141 | INFO | app | All models load attempt completed.
+2026-02-26 00:52:41,218 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-26 00:52:41,219 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-02-26 00:52:41,225 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 00:52:48,867 | INFO | app | All models load attempt completed.
+2026-02-26 00:52:48,902 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 00:52:48,925 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 00:53:09,155 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:09] "GET / HTTP/1.1" 200 -
+2026-02-26 00:53:13,530 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:13] "GET / HTTP/1.1" 200 -
+2026-02-26 00:53:15,235 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:15] "GET / HTTP/1.1" 200 -
+2026-02-26 00:53:22,981 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:22] "GET /gold HTTP/1.1" 200 -
+2026-02-26 00:53:23,303 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:23] "[36mGET /static/bg.jpg HTTP/1.1[0m" 304 -
+2026-02-26 00:53:33,438 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:33] "POST /gold HTTP/1.1" 200 -
+2026-02-26 00:53:53,472 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:53] "POST /gold HTTP/1.1" 200 -
+2026-02-26 00:53:57,705 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:57] "GET /gold HTTP/1.1" 200 -
+2026-02-26 00:53:57,787 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:53:57] "[36mGET /static/bg.jpg HTTP/1.1[0m" 304 -
+2026-02-26 00:54:10,732 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:54:10] "POST /gold HTTP/1.1" 200 -
+2026-02-26 00:58:05,727 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:05] "GET /gold HTTP/1.1" 200 -
+2026-02-26 00:58:05,820 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:05] "[36mGET /static/bg.jpg HTTP/1.1[0m" 304 -
+2026-02-26 00:58:15,574 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:15] "POST /gold HTTP/1.1" 200 -
+2026-02-26 00:58:37,217 | INFO | app | All models load attempt completed.
+2026-02-26 00:58:37,250 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-26 00:58:37,251 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-02-26 00:58:37,254 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 00:58:44,081 | INFO | app | All models load attempt completed.
+2026-02-26 00:58:44,135 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 00:58:44,154 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 00:58:47,378 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:47] "POST /gold HTTP/1.1" 200 -
+2026-02-26 00:58:49,065 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:49] "GET /gold HTTP/1.1" 200 -
+2026-02-26 00:58:59,836 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 00:58:59] "POST /gold HTTP/1.1" 200 -
+2026-02-26 01:02:48,316 | INFO | app | All models load attempt completed.
+2026-02-26 01:02:48,367 | INFO | werkzeug | [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-02-26 01:02:48,367 | INFO | werkzeug | [33mPress CTRL+C to quit[0m
+2026-02-26 01:02:48,372 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:02:54,635 | INFO | app | All models load attempt completed.
+2026-02-26 01:02:54,651 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:02:54,658 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:03:03,869 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:03:03] "GET / HTTP/1.1" 200 -
+2026-02-26 01:03:07,737 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:03:07] "GET /gold HTTP/1.1" 200 -
+2026-02-26 01:03:08,019 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:03:08] "[36mGET /static/bg.jpg HTTP/1.1[0m" 304 -
+2026-02-26 01:03:17,589 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:03:17] "POST /gold HTTP/1.1" 200 -
+2026-02-26 01:04:05,124 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:04:05,881 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:04:13,978 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:04:13,990 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:04:15,720 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:04:16,370 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:04:25,263 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:04:25,330 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:04:27,149 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:04:27,751 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:04:37,457 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:04:37,467 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:04:42,858 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:04:43,630 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:04:51,571 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:04:51,585 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:04:59,093 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:04:59] "POST /gold HTTP/1.1" 200 -
+2026-02-26 01:05:02,105 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:05:02] "GET /gold HTTP/1.1" 200 -
+2026-02-26 01:06:16,366 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:06:18,945 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:06:34,748 | INFO | app | Model loaded: United_StatesUSD
+2026-02-26 01:06:36,096 | INFO | app | Model loaded: EuropeEUR
+2026-02-26 01:06:36,617 | INFO | app | Model loaded: JapanJPY
+2026-02-26 01:06:36,620 | INFO | app | Model loaded: United_KingdomGBP
+2026-02-26 01:06:37,060 | INFO | app | Model loaded: CanadaCAD
+2026-02-26 01:06:37,066 | INFO | app | Model loaded: SwitzerlandCHF
+2026-02-26 01:06:37,446 | INFO | app | Model loaded: IndiaINR
+2026-02-26 01:06:37,449 | INFO | app | Model loaded: ChinaCNY
+2026-02-26 01:06:37,806 | INFO | app | Model loaded: TurkeyTRY
+2026-02-26 01:06:37,809 | INFO | app | Model loaded: Saudi_ArabiaSAR
+2026-02-26 01:06:39,097 | INFO | app | Model loaded: IndonesiaIDR
+2026-02-26 01:06:39,133 | INFO | app | Model loaded: United_Arab_EmiratesAED
+2026-02-26 01:06:39,164 | INFO | app | Model loaded: ThailandTHB
+2026-02-26 01:06:39,183 | INFO | app | Model loaded: VietnamVND
+2026-02-26 01:06:40,766 | INFO | app | Model loaded: EgyptEGP
+2026-02-26 01:06:40,770 | INFO | app | Model loaded: South_KoreanKRW
+2026-02-26 01:06:40,777 | INFO | app | Model loaded: AustraliaAUD
+2026-02-26 01:06:41,286 | INFO | app | Model loaded: South_AfricaZAR
+2026-02-26 01:06:41,287 | INFO | app | ✅ All models loaded!
+2026-02-26 01:06:41,412 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:06:41,451 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:06:42,969 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:06:42] "POST /gold HTTP/1.1" 200 -
+2026-02-26 01:06:44,468 | INFO | werkzeug |  * Detected change in 'C:\\Users\\dell\\Desktop\\Rohit\\CODES\\gold\\app.py', reloading
+2026-02-26 01:06:46,691 | INFO | werkzeug |  * Restarting with stat
+2026-02-26 01:06:53,378 | INFO | app | Model loaded: United_StatesUSD
+2026-02-26 01:06:53,689 | INFO | app | Model loaded: EuropeEUR
+2026-02-26 01:06:53,940 | INFO | app | Model loaded: JapanJPY
+2026-02-26 01:06:53,979 | INFO | app | Model loaded: United_KingdomGBP
+2026-02-26 01:06:54,349 | INFO | app | Model loaded: CanadaCAD
+2026-02-26 01:06:54,352 | INFO | app | Model loaded: SwitzerlandCHF
+2026-02-26 01:06:54,620 | INFO | app | Model loaded: IndiaINR
+2026-02-26 01:06:54,622 | INFO | app | Model loaded: ChinaCNY
+2026-02-26 01:06:54,849 | INFO | app | Model loaded: TurkeyTRY
+2026-02-26 01:06:54,851 | INFO | app | Model loaded: Saudi_ArabiaSAR
+2026-02-26 01:06:55,011 | INFO | app | Model loaded: IndonesiaIDR
+2026-02-26 01:06:55,013 | INFO | app | Model loaded: United_Arab_EmiratesAED
+2026-02-26 01:06:55,014 | INFO | app | Model loaded: ThailandTHB
+2026-02-26 01:06:55,015 | INFO | app | Model loaded: VietnamVND
+2026-02-26 01:06:55,175 | INFO | app | Model loaded: EgyptEGP
+2026-02-26 01:06:55,176 | INFO | app | Model loaded: South_KoreanKRW
+2026-02-26 01:06:55,179 | INFO | app | Model loaded: AustraliaAUD
+2026-02-26 01:06:55,352 | INFO | app | Model loaded: South_AfricaZAR
+2026-02-26 01:06:55,353 | INFO | app | ✅ All models loaded!
+2026-02-26 01:06:55,369 | WARNING | werkzeug |  * Debugger is active!
+2026-02-26 01:06:55,377 | INFO | werkzeug |  * Debugger PIN: 455-415-738
+2026-02-26 01:07:06,222 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:07:06] "GET /gold HTTP/1.1" 200 -
+2026-02-26 01:07:14,931 | INFO | werkzeug | 127.0.0.1 - - [26/Feb/2026 01:07:14] "POST /gold HTTP/1.1" 200 -
